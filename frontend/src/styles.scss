@@ -1,0 +1,44 @@
+// Import Carbon styles first (includes fonts automatically)
+@use '@carbon/styles';
+@use '@carbon/themes/scss/themes' as *;
+@use '@carbon/themes';
+
+// Import Carbon type separately
+@use '@carbon/type';
+
+// Include type reset
+@include type.reset();
+
+// Include default type styles, targets h1, h2, h3, etc
+@include type.default-type();
+
+// Include utility classes for type-related properties
+@include type.type-classes();
+
+/* system preference theme by default */
+:root {
+  @include themes.theme($g10);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    @include themes.theme($g100);
+  }
+}
+
+/* user has configured a theme preference for the current page/app */
+[data-carbon-theme='white'] {
+  @include themes.theme($white);
+}
+
+[data-carbon-theme='g10'] {
+  @include themes.theme($g10);
+}
+
+[data-carbon-theme='g90'] {
+  @include themes.theme($g90);
+}
+
+[data-carbon-theme='g100'] {
+  @include themes.theme($g100);
+}

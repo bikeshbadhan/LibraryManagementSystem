@@ -1,0 +1,21 @@
+/* Minimal CSS - Only for login page background (not a Carbon component feature) */
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* Login page background - only applied when not in dashboard */
+body:has(.login-page) {
+  background-image: url('/login-background.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  min-height: 100vh;
+}
+
+.login-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: var(--cds-spacing-07) 0;
+}
